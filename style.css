@@ -179,6 +179,192 @@
      transition: all 0.3s ease;
  }
 
+ /* Seção de Certificados */
+
+
+ .certificates {
+    padding: 80px 0;
+    overflow: hidden; /* Evita scroll horizontal indesejado */
+}
+
+.swiper {
+    width: 100%;
+    padding: 50px 20px !important; /* Espaço para o efeito de elevação do card */
+}
+
+.certificate-card {
+    background: #1a1a1a; /* Cor de fundo pros cards */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s ease;
+    cursor: grab; /* Cursor de "mãozinha" para arrastar */
+}
+
+.certificate-card:active {
+    cursor: grabbing;
+}
+
+.certificate-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Correção para garantir que os slides fiquem em linha */
+.swiper {
+    width: 100%;
+    overflow: hidden; /* Importante para não vazar os cards */
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+/* Garante que o card ocupe o espaço correto */
+.certificate-card {
+    margin: 10px;
+}
+
+/* Estilização da Grade de Certificados */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria colunas automáticas */
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.certificate-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: #f4f4f4;
+    line-height: 0; /* Remove espaço extra abaixo da imagem */
+}
+
+.certificate-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Legenda discreta ao passar o mouse (Opcional) */
+.cert-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-item:hover .cert-overlay {
+    opacity: 1;
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+    .certificates-grid {
+        grid-template-columns: 1fr; /* Empilha em telas de celular se preferir */
+    }
+}
+
+/* Cor das setas e paginação do Swiper */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--primary-color) !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary-color) !important;
+}
+.certificates {
+    padding: 100px 0;
+    background: var(--bg-secondary); /* Use sua cor de fundo alternativa */
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.certificate-card {
+    min-width: calc(33.333% - 20px);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.certificate-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.cert-info h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.cert-info p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Botões do Carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.carousel-btn:hover { opacity: 0.8; }
+.prev { left: 0; }
+.next { right: 0; }
+
+@media (max-width: 768px) {
+    .certificate-card { min-width: 80%; }
+}
+
  .hero-profile-img:hover {
      transform: scale(1.05);
  }
