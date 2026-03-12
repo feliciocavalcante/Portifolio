@@ -185,6 +185,7 @@
  .certificates {
     padding: 80px 0;
     overflow: hidden; /* Evita scroll horizontal indesejado */
+    position: relative;
 }
 
 .swiper {
