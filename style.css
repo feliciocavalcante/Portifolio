@@ -698,6 +698,10 @@
      gap: 2rem;
  }
 
+ .projects2 {
+     background: var(--light);
+ }
+
  .project-card {
      background: var(--white);
      border-radius: 1rem;
